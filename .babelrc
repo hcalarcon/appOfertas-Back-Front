@@ -1,0 +1,6 @@
+//especificar que puede escribir 
+{
+    "presets": [
+        "@babel/preset-env"
+    ]
+}
