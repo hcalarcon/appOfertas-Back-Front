@@ -2,33 +2,44 @@ import { Router } from 'express';
 import { 
     getPublish,
     createUsers,
-    getUserById
+    getUserById,
+    logIn
  } from '../controller/producto'
 
 const router = Router();
-
-
-
 /**
  * @swagger
  * /publi:
  *  get:
- *      sumary: obtiene algo
+ *      sumary: obtiene todos los usuarios
  */
 router.get('/publi', getPublish);
-//get published for id
-router.get('/publi/:id');
+
 //get users for id
 router.get('/users/:id', getUserById);
 
 
-router.post('/publi');
+//Enpoint para loguear usuario
 /**
  * @swagger
- * /users:
+ * /logim:
+ *  post:
+ *      sumary: loguear usuario
+ */
+router.post('/login', logIn);
+
+
+
+/**
+ * @swagger
+ * /usersp:
  *  post:
  *      sumary: crea usuarios
  */
-router.post('/users', createUsers);
+router.post('/usersp', createUsers);
+
+
 
 export default router;
+
+//tengo que usar run dev y no start 

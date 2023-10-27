@@ -1,7 +1,18 @@
-@api = http://localhost:3000/users
+@api = http://localhost:3000/login
+@apisp = http://localhost:3000/usersp
+@apiemail = http://localhost:3000/usersemail
 
 GET {{api}}/3
 
+###
+POST {{apisp}}
+Content-Type: application/json
+
+{
+    "username": "paola",
+    "email": "paolo@example.com",
+    "password": "admin"
+}
 ###
 POST {{api}}
 Content-Type: application/json
@@ -10,4 +21,22 @@ Content-Type: application/json
     "username": "pepe",
     "email": "pepe@example.com",
     "password": "1234"
+}
+
+###
+POST {{api}}
+Content-Type: application/json
+
+{
+    "email": "pepe@example.com",
+    "password" : "1234"
+}
+
+###
+GET  {{apiemail}}
+Content-Type: application/json
+
+{
+    "email": "pepe@example.com",
+    "password" : "1234"
 }
