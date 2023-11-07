@@ -5,7 +5,7 @@ CREATE TABLE users (
     apellido VARCHAR(50),
     email VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(8) NOT NULL,
-    dni VARCHAR(8) NOT NULL UNIQUE
+    dni VARCHAR(8) NOT NULL 
 );
 
 CREATE TABLE publicacion (

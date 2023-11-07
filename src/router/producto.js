@@ -1,3 +1,13 @@
+//en este archivo se manejan todos los endpoints de la API
+//Esta en contruccion 
+
+//Fucnionando hasta el momento 
+//login y singup
+
+//esta documentado con swagger
+
+//al acceder al endpoint, llama a una funcion que esta en la ruta /controllers/producto.js
+
 import { Router } from 'express';
 import { 
     getPublish,
@@ -36,7 +46,7 @@ router.post('/login', logIn);
  *  post:
  *      sumary: crea usuarios
  */
-router.post('/usersp', createUsers);
+router.post('/usersp', createUsers);   
 
 
 

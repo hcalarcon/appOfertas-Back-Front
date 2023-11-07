@@ -1,16 +1,16 @@
-@api = http://localhost:3000/login
+@api = http://localhost:3000/publi
 @apisp = http://localhost:3000/usersp
 @apiemail = http://localhost:3000/usersemail
 
-GET {{api}}/3
+GET {{api}}
 
 ###
 POST {{apisp}}
 Content-Type: application/json
 
 {
-    "username": "paola",
-    "email": "paolo@example.com",
+    "username": "paolas",
+    "email": "paolas@example.com",
     "password": "admin"
 }
 ###
