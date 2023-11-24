@@ -8,33 +8,27 @@ CREATE TABLE users (
     dni VARCHAR(8) NOT NULL 
 );
 
-CREATE TABLE publicacion (
+CREATE TABLE publicacion(
     publiId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    porductoId INT NOT NULL,
     userId INT NOT NULL,
-    id INT (11) NOT NULL,
-    FOREIGN KEY (porductoId) REFERENCES productos(id_producto),
-    FOREIGN KEY (userId) REFERENCES personas(userId) ON DELETE CASCADE,
-    FOREIGN KEY (id) REFERENCES punto_de_venta(id)
-);
+    pv_id INT(11) NOT NULL,
+    fin_oferta DATE NOT NULL,
+    tipo_oferta INT(11) NOT NULL,
+    catid INT(11) NOT NULL,
+    nombre VARCHAR (50) NOT NULL,
+    precio DECIMAL (10,2) NOT NULL,
+    imagen VARCHAR(255),
+    FOREIGN KEY(userId) REFERENCES users(userId) ON DELETE CASCADE,
+    FOREIGN KEY(pv_id) REFERENCES punto_de_venta(id),
+    FOREIGN KEY(tipo_oferta) REFERENCES tipo_ofertas(id),
+    FOREIGN KEY(catid) REFERENCES categoria(catId)
+)
 
 CREATE TABLE categoria (
     catId INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(20) NOT NULL
 );
 
-CREATE TABLE productos (
-    id_producto INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR (50) NOT NULL,
-    precio DECIMAL (10,2) NOT NULL,
-    punto_de_venta INT(11) NOT NULL,
-    imagen VARCHAR(255),
-    fin_oferta DATE NOT NULL,
-    tipo_oferta INT(11) NOT NULL,
-    categoria INT(11) NOT NULL,
-    FOREIGN key (tipo_oferta) REFERENCES tipo_oferta(id),
-    FOREIGN KEY (categoria) REFERENCES categoria(catId)
-);
 
 CREATE TABLE tipo_ofertas (
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,

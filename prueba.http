@@ -1,6 +1,7 @@
 @api = http://localhost:3000/publi
 @apisp = http://localhost:3000/usersp
 @apiemail = http://localhost:3000/usersemail
+@apiupdate = http://localhost:3000/user/update
 
 GET {{api}}
 
@@ -39,4 +40,16 @@ Content-Type: application/json
 {
     "email": "pepe@example.com",
     "password" : "1234"
+}
+###
+PUT {{apiupdate}}
+Content-Type: application/json
+
+{
+    "username" : "pepe", 
+    "email" : "pepe@admin", 
+    "nombre" : "pepe", 
+    "apellido" : "pepom",
+     "dni" : "aa", 
+     "userId" : "24"
 }
