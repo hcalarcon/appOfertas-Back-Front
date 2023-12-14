@@ -2,9 +2,26 @@
 @apisp = http://localhost:3000/usersp
 @apiemail = http://localhost:3000/usersemail
 @apiupdate = http://localhost:3000/user/update
+@apicat = http://localhost:3000/categoria
+@allapi = http://localhost:3000/all
+@image = http://localhost:3000/profileimg
+@updateimage = http://localhost:3000/user/updateImage
+
+
+GET  {{image}}
+
 
 GET {{api}}
 
+###
+GET  {{allapi}}
+Content-Type: application/json
+
+{
+    "tabla": "tipo_ofertas"
+}
+###
+GET {{apicat}}
 ###
 POST {{apisp}}
 Content-Type: application/json
@@ -52,4 +69,12 @@ Content-Type: application/json
     "apellido" : "pepom",
      "dni" : "aa", 
      "userId" : "24"
+}
+###
+PUT {{updateimage}}
+Content-Type: application/json
+
+{
+    "img" : "profileimg/profile_55.jpg",
+    "userId" : "1"
 }
